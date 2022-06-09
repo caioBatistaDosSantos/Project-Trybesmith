@@ -10,15 +10,15 @@ const getProductsAll = async () => {
   return products;
 };
 
-const createProduct = async (name: string, quantity: string) => {
-  const query = 'INSERT INTO products (name, quantity) VALUES (?, ?)';
+const createProduct = async (name: string, amount: string) => {
+  const query = 'INSERT INTO Trybesmith.Products (name, amount) VALUES (?, ?)';
 
-  const [registeredProduct] = await connection.execute<ResultSetHeader>(query, [name, quantity]);
+  const [registeredProduct] = await connection.execute<ResultSetHeader>(query, [name, amount]);
 
   const product = {
     id: registeredProduct.insertId,
     name,
-    quantity,
+    amount,
   };
 
   return product;
