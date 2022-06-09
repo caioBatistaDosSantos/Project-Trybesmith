@@ -2,7 +2,7 @@ import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
 // import IterfaceProduct from '../interfaces/productInterface';
 
-const getAllProductsModel = async () => {
+const getProductsAll = async () => {
   const query = 'SELECT * FROM Trybesmith.Products ORDER BY id';
 
   const [products] = await connection.execute(query);
@@ -23,5 +23,10 @@ const createProduct = async (name: string, quantity: string) => {
 
   return product;
 };
+
+const productModel = {
+  getProductsAll,
+  createProduct,
+};
  
-export { getAllProductsModel, createProduct };
+export default productModel;
