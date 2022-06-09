@@ -1,6 +1,5 @@
 import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
-// import IterfaceProduct from '../interfaces/productInterface';
 
 const getProductsAll = async () => {
   const query = 'SELECT * FROM Trybesmith.Products ORDER BY id';
